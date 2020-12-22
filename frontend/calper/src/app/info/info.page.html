@@ -3,10 +3,40 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Informacion</ion-title>
+    <ion-title>Información</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" >
+  <ion-list>
+    <ion-item >
+      <ion-card class="card-config">
+        <div class="ion-text-center">
+          <img src="../../assets/lost-money.jpg" />
+        </div>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">
+            <h2>Bienvenido</h2>
+          </ion-card-title>
+          <ion-card-subtitle class="ion-text-center">
+            <h3>¿Sabias que tu dinero pierde valor con el tiempo?</h3>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="ion-text-justify"> El 61% de los mexicanos usa métodos de ahorro informales. Principalmente, guardan
+            el dinero en casa (65%) o participan en tandas (34%), de acuerdo con la Encuesta Nacional de Inclusión
+            Financiera (ENIF) 2015.
+          </p>
+
+          <p class="ion-text-justify">Hoy en día hay instrumentos de inversión muy sencillos, para los que solo necesitas leer información en internet o preguntar todo lo que no entiendas a quienes te lo ofrecen o a la Condusef (seguros totales, CETES, Piggo, pagarés). Si bien estos no te darán muchos rendimientos, son fáciles de usar y son relativamente seguros.</p>
+        </ion-card-content>
+
+        <ion-button expand="block" color="secondary" (click)="enrutar()">Probar</ion-button>
+      </ion-card>
+    </ion-item>
+    
+
+  </ion-list>
+
 
 </ion-content>

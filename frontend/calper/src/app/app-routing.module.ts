@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'calculador',
+    redirectTo: 'info',
     pathMatch: 'full'
   },
   // {
@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: ()=> import('./info/info.module').then(m =>  m.InfoPageModule)
-  },
+  },  
   {
     path: 'nosotros',
     loadChildren: () => import('./nosotros/nosotros.module').then( m => m.NosotrosPageModule)
