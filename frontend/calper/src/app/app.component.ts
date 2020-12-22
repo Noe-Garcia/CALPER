@@ -14,17 +14,17 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Calculador',
-      url: '/calper/Calculador',
+      url: '/calculador',
       icon: 'Calculator'
     },
     {
       title: 'Infórmate',
-      url: '/folder/Informate',
+      url: '/info',
       icon: 'information-circle'
     },
     {
       title: 'Sobre nosotros',
-      url: '/folder/Nosotros',
+      url: '/nosotros',
       icon: 'heart'
     }
   ];
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('/calper/calculador')[1];
+    const path = window.location.pathname.split('/calculador')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
