@@ -3,7 +3,9 @@
     <ion-menu contentId="main-content" type="push">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>CALPER</ion-list-header>
+          <ion-list-header>
+            <ion-text color="primary"> CALPER </ion-text>
+          </ion-list-header>
           <ion-note>Conoce cuanto valdrá tu dinero a través del tiempo.</ion-note>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
