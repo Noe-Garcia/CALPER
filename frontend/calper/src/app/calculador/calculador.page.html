@@ -1,33 +1,46 @@
-<ion-header [traslucent]="true">
+<!-- <ion-header [traslucent]="true"> -->
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-     <ion-text color="alert"> Calculador</ion-text>
+      <ion-text color="alert">Calculadora</ion-text>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content [fullscreen]="true">
   <!-- <app-root></app-root> -->
   <ion-item>
-    <ion-card>
+    <ion-card class="card-config">
       <ion-card-header>
-        <h3>Calcula tus pérdidas con el ahorro tradicional</h3>
-        <ion-text color="primary">
-          Calcula tus pérdidas con el ahorro tradicional
-        </ion-text>
+        <div class="ion-text-center">
+          <h1> Calcula el valor de tu dinero en el tiempo</h1>
+        </div>
       </ion-card-header>
-      <ion-input type="number" clearInput placeholder="Ingresa tus ahorros totales">
-      </ion-input>
+
+      <!-- <ion-input type="number" clearInput placeholder="Ingresa tus ahorros totales" class="inputs"></ion-input>
+        <div class="ion-text-end">
+          <ion-button color="secondary">Calcular</ion-button>
+        </div> -->
     </ion-card>
   </ion-item>
+  <ion-item>
 
 
+    <ion-label>
+      Ingresa tus ahorros
+    </ion-label>
 
-
-
+    <ion-input type="number" placeholder="MXN" clearInput [(ngModel)]="ahorros"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="calcular()" color="secondary" expand="block" fill="clear">
+      Calcular
+    </ion-button>
+  </ion-item>
+  <div>
+    {{response}}
+  </div>
 </ion-content>
