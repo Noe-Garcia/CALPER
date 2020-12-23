@@ -11,25 +11,25 @@ import json
 app = Flask(__name__)
 
 def getInfActual():
-    return infActual
+    return float(infActual)
 
 def getInfActualDate():
     return infActualDate
 
 def getValorUdis():
-    return valorUdis
+    return float(valorUdis)
 
 def getValorUdisDate():
     return valorUdisDate
 
 def getInfFinal():
-    return infFinal
+    return float(infFinal)
 
 def getInfFinalDate():
     return infFinalDate
 
 def getValorCete():
-    return valorCete
+    return float(valorCete)
 
 def getValorCeteDate():
     return valorCeteDate
