@@ -34,43 +34,42 @@ def getValorCete():
 def getValorCeteDate():
     return valorCeteDate
 
-if __name__ == '__main__':
-    url = 'https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP30578,SP68257,SR16773,SR14755/datos/oportuno?token=2ac7879679a24f782b0ab50a26563302baaad76fc53c52968a1a113e7e6aae5a'
-    response = requests.get(url)
+url = 'https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP30578,SP68257,SR16773,SR14755/datos/oportuno?token=2ac7879679a24f782b0ab50a26563302baaad76fc53c52968a1a113e7e6aae5a'
+response = requests.get(url)
     
-    if response.status_code == 200:
-        response_json = json.loads(response.content)
-        bmx = response_json['bmx']
-        series = bmx['series']
+if response.status_code == 200:
+    response_json = json.loads(response.content)
+    bmx = response_json['bmx']
+    series = bmx['series']
 
-        for inpclist in series:
-            if inpclist['idSerie'] == 'SP30578':
-                for inpcdata in inpclist['datos']:
-                    infActual = inpcdata['dato']
-                    infActualDate = inpcdata['fecha']
-                    getInfActual()
-                    getInfActualDate()
+    for inpclist in series:
+        if inpclist['idSerie'] == 'SP30578':
+            for inpcdata in inpclist['datos']:
+                infActual = inpcdata['dato']
+                infActualDate = inpcdata['fecha']
+                getInfActual()
+                getInfActualDate()
 
-        for udislist in series:
-            if udislist['idSerie'] == 'SP68257':
-                for udisdata in udislist['datos']: 
-                    valorUdis = udisdata['dato']
-                    valorUdisDate = udisdata['fecha']
-                    getValorUdis()
-                    getValorUdisDate()
+    for udislist in series:
+        if udislist['idSerie'] == 'SP68257':
+            for udisdata in udislist['datos']: 
+                valorUdis = udisdata['dato']
+                valorUdisDate = udisdata['fecha']
+                getValorUdis()
+                getValorUdisDate()
 
-        for infglist in series:
-            if infglist['idSerie'] == 'SR16773':
-                for infgdata in infglist['datos']:
-                    infFinal = infgdata['dato']
-                    infFinalDate = infgdata['fecha']
-                    getInfFinal()
-                    getInfFinalDate()
+    for infglist in series:
+        if infglist['idSerie'] == 'SR16773':
+            for infgdata in infglist['datos']:
+                infFinal = infgdata['dato']
+                infFinalDate = infgdata['fecha']
+                getInfFinal()
+                getInfFinalDate()
         
-        for cetelist in series:
-            if cetelist['idSerie'] == 'SR14755':
-                for cetedata in cetelist['datos']:
-                    valorCete = cetedata['dato']
-                    valorCeteDate = cetedata['fecha']
-                    getValorCete()
-                    getValorCeteDate()
+    for cetelist in series:
+        if cetelist['idSerie'] == 'SR14755':
+            for cetedata in cetelist['datos']:
+                valorCete = cetedata['dato']
+                valorCeteDate = cetedata['fecha']
+                getValorCete()
+                getValorCeteDate()
