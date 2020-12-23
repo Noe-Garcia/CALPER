@@ -5,6 +5,7 @@
 
 from flask import Flask, jsonify
 from users import users
+from calc import *
 import requests
 import json
 
@@ -33,27 +34,30 @@ if __name__ == '__main__':
         for inpclist in series:
             if inpclist['idSerie'] == 'SP30578':
                 for inpcdata in inpclist['datos']:
-                    inpc = inpcdata['dato']
-                    inpcdate = inpcdata['fecha']
+                    inpc = inpcdata['dato'] #infMesActual
+                    inpcdate = inpcdata['fecha'] #infActualDate
                     print(inpc , inpcdate)
 
         for udislist in series:
             if udislist['idSerie'] == 'SP68257':
-                for udisdata in udislist['datos']:
-                    udis = udisdata['dato']
-                    udisdate = udisdata['fecha']
+                for udisdata in udislist['datos']: 
+                    udis = udisdata['dato'] #valorUdis
+                    udisdate = udisdata['fecha'] #valorUdisDate
                     print(udis , udisdate)
 
         for infglist in series:
             if infglist['idSerie'] == 'SR16773':
                 for infgdata in infglist['datos']:
-                    infg = infgdata['dato']
-                    infgdate = infgdata['fecha']
+                    infg = infgdata['dato'] #infFinal
+                    infgdate = infgdata['fecha'] #infFinalDate
                     print(infg , infgdate)
         
         for cetelist in series:
             if cetelist['idSerie'] == 'SR14755':
                 for cetedata in cetelist['datos']:
-                    cete = cetedata['dato']
-                    cetedate = cetedata['fecha']
+                    cete = cetedata['dato'] #valorCete
+                    cetedate = cetedata['fecha'] #valorCeteDate
                     print(cete , cetedate)
+
+def getInfActual():
+def 
