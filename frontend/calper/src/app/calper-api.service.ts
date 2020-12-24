@@ -10,10 +10,11 @@ export class CalperApiService {
     this.URI = 'http://localhost:5000/calculo';
   }
   jsonResponse;
-  postConsulta(ahorros:number){
-    return this.http.post(this.URI, ahorros).toPromise().then((res:any) =>{
+  postConsulta(ahorros:JSON){
+    return this.http.post(this.URI, ahorros).toPromise().
+    then((res:any) => {
       console.log(res);
-      this.jsonResponse = res.json;
+      console.log(JSON.stringify(res.json))
     });
   }
 }
