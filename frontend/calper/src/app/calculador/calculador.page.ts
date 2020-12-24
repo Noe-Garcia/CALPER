@@ -1,53 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Key } from 'protractor';
 import { CalperApiService } from '../calper-api.service'
-<<<<<<< Updated upstream
-type jsonResponse = {
-  message: string;
-  status: string;
-=======
+
 type Response={
   ahorros: string;
   inflacionPronosticada:string;
   valorInvirtiendoEnCetes:string;
   valorReal:string;
->>>>>>> Stashed changes
-}
+
 @Component({
   selector: 'app-calculador',
   templateUrl: './calculador.page.html',
   styleUrls: ['./calculador.page.scss'],
 })
 export class CalculadorPage implements OnInit {
-<<<<<<< Updated upstream
-  message: string;
-  status: string;
 
-  constructor(private calperApi: CalperApiService) { }
-
-=======
   ahorros:number;
   response: any;
   responses:any=[];
   constructor(private calperApi: CalperApiService){}
->>>>>>> Stashed changes
+  ahorros:number;
+
+  constructor(private calperApi: CalperApiService){}
   ngOnInit() {
   }
+  // contruirJson(){
+
+  //   console.log(this.ahorros);
+  // }
   calcular() {
-    // console.log("Funciona!")
+    console.log(this.ahorros);
     this.calperApi.getConsulta()
-<<<<<<< Updated upstream
-      .subscribe(
-        res => this.extract(res.toString),
-        err => console.log(err)
-      )
-  }
-  extract(newObj) {
-    console.log(newObj);
-    this.message = newObj;
-    console.log(this.message);
-  }
-=======
+
     .subscribe(
       res => this.saveRes(res),
       err => console.log(err)
@@ -58,5 +42,11 @@ export class CalculadorPage implements OnInit {
     console.log(res);
     this.responses = res;
   }
->>>>>>> Stashed changes
+
+    .subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
+  }
+
 }
