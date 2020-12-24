@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Key } from 'protractor';
 import { CalperApiService } from '../calper-api.service'
-type jsonResponse = {
-  message: string;
-  status: string;
-}
+
 @Component({
   selector: 'app-calculador',
   templateUrl: './calculador.page.html',
@@ -12,27 +9,25 @@ type jsonResponse = {
 })
 
 export class CalculadorPage implements OnInit {
-  message: string;
-  status: string;
+  ahorros:number;
+  json: object;
 
   constructor(private calperApi: CalperApiService) { }
 
   ngOnInit() {
 
   }
-  calcular() {
-    // console.log("Funciona!")
-    this.calperApi.getConsulta()
-      .subscribe(
-        res => this.funciona(res),
-        err => console.log(err)
-      )
-  }
-  // extract(newObj) {
-  //   console.log(newObj);
-  //   this.message = newObj;
-  //   console.log(this.message);
+  // contruirJson(){
+
+  //   console.log(this.ahorros);
   // }
+  calcular() {
+    // this.contruirJson();
+    console.log("Funciona!")
+    this.calperApi.postConsulta(this.ahorros);
+
+  }
+
   funciona(res){
     console.log("La api responde:");
     console.log(res);

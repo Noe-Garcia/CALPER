@@ -4,12 +4,16 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CalperApiService {
+
   URI: string = '';
   constructor(private http: HttpClient) {
     this.URI = 'http://localhost:5000/calculo';
   }
-
-  getConsulta(){
-    return this.http.get(this.URI);
+  jsonResponse;
+  postConsulta(ahorros:number){
+    return this.http.post(this.URI, ahorros).toPromise().then((res:any) =>{
+      console.log(res);
+      this.jsonResponse = res.json;
+    });
   }
 }
