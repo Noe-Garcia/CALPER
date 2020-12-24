@@ -6,7 +6,7 @@ import { HttpClient} from '@angular/common/http';
 export class CalperApiService {
   URI: string = '';
   constructor(private http: HttpClient) {
-    this.URI = 'https://dog.ceo/api/breeds/image/random';
+    this.URI = 'http://localhost:5000/calculo';
   }
 
   getConsulta(){

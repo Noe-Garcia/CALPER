@@ -24,13 +24,17 @@ export class CalculadorPage implements OnInit {
     // console.log("Funciona!")
     this.calperApi.getConsulta()
       .subscribe(
-        res => this.extract(res.toString),
+        res => this.funciona(res),
         err => console.log(err)
       )
   }
-  extract(newObj) {
-    console.log(newObj);
-    this.message = newObj;
-    console.log(this.message);
+  // extract(newObj) {
+  //   console.log(newObj);
+  //   this.message = newObj;
+  //   console.log(this.message);
+  // }
+  funciona(res){
+    console.log("La api responde:");
+    console.log(res);
   }
 }
