@@ -10,9 +10,8 @@ import { CalperApiService } from '../calper-api.service'
 
 export class CalculadorPage implements OnInit {
   ahorros:number;
-  ahorrosJson: any;
-  constructor(private calperApi: CalperApiService) { }
 
+  constructor(private calperApi: CalperApiService){}
   ngOnInit() {
 
   }
@@ -21,13 +20,13 @@ export class CalculadorPage implements OnInit {
   //   console.log(this.ahorros);
   // }
   calcular() {
-    this.ahorrosJson = JSON.stringify(this.ahorros);
-    this.calperApi.postConsulta(this.ahorrosJson);
-
+    console.log(this.ahorros);
+    this.calperApi.getConsulta()
+    .subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
   }
 
-  funciona(res){
-    console.log("La api responde:");
-    console.log(res);
-  }
+
 }

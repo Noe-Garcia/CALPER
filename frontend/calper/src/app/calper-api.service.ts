@@ -9,8 +9,12 @@ export class CalperApiService {
   constructor(private http: HttpClient) {
     this.URI = 'http://localhost:5000/calculo';
   }
-  jsonResponse;
-  postConsulta(ahorros:JSON){
+
+  getConsulta(){
+    return this.http.get(this.URI);
+  }
+
+  postConsulta(ahorros){
     return this.http.post(this.URI, ahorros).toPromise().
     then((res:any) => {
       console.log(res);
