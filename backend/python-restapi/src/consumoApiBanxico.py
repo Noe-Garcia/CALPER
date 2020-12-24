@@ -4,7 +4,6 @@
 #SR14755 Tasa de Interes del Cete
 
 from flask import Flask, jsonify
-from users import users
 import requests
 import json
 
