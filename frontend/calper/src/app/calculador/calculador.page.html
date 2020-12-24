@@ -35,12 +35,14 @@
 
     <ion-input type="number" placeholder="MXN" clearInput [(ngModel)]="ahorros"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-button (click)="calcular()" color="secondary" expand="block" fill="clear">
-      Calcular
-    </ion-button>
-  </ion-item>
-  <div>
-    {{response}}
-  </div>
+
+  <ion-button (click)="calcular()" color="secondary" expand="block" fill="clear">
+    Calcular
+  </ion-button>
+  <ion-list *ngFor="let response of responses">
+    <h3>{{response.ahorros}}</h3>
+    <h3>{{response.inflacionPronosticada</h3>
+    <h3>{{response.valorInvirtiendoEnCetes}}</h3>
+    <h3>{{response.valorReal</h3>
+  </ion-list>
 </ion-content>
