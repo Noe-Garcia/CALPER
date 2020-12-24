@@ -18,4 +18,4 @@ def getDatos():
 
 if __name__ == '__main__':
     ahorros = 100000 #Dato de prueba
-    apiCliente.run(host="0.0.0.0", port=4000, debug=True,)
+    apiCliente.run(host="0.0.0.0", port=4000, debug=True)
