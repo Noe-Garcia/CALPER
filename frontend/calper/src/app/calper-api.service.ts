@@ -6,7 +6,7 @@ import { HttpClient} from '@angular/common/http';
 export class CalperApiService {
   URI: string = '';
   constructor(private http: HttpClient) {
-    this.URI = 'http://192.168.100.232:5000/calculo';
+    this.URI = 'http://localhost:5000/calculo';
   }
 
   getConsulta(){

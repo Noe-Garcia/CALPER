@@ -1,3 +1,5 @@
+#docker run -it -p 5000:4000 -d calper // comando para correr en el contenedor
+
 from flask import Flask, jsonify
 # import calc
 
